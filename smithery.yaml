@@ -1,0 +1,29 @@
+# Smithery config for Holdings MCP (stdio, wraps the published npm package @getholdings/mcp)
+# Drop this at the ROOT of a PUBLIC repo, then connect that repo at smithery.ai/new.
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required: ["holdingsApiKey"]
+    properties:
+      holdingsApiKey:
+        type: string
+        title: Holdings API Key
+        description: >-
+          Your Holdings API key. Create a free one in your Holdings workspace
+          under Settings → API keys. No monthly fee.
+      holdingsApiBase:
+        type: string
+        title: API Base URL (optional)
+        description: >-
+          Only set to override. Defaults to https://workspace.getholdings.com/api/v1
+        default: https://workspace.getholdings.com/api/v1
+  commandFunction: |-
+    (config) => ({
+      command: "npx",
+      args: ["-y", "@getholdings/mcp"],
+      env: {
+        HOLDINGS_API_KEY: config.holdingsApiKey,
+        ...(config.holdingsApiBase ? { HOLDINGS_API_BASE: config.holdingsApiBase } : {})
+      }
+    })
