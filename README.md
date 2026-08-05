@@ -4,10 +4,15 @@
 
 Tell the AI you already use who to bill and how much: it drafts the invoice, shows you a preview, and sends it the moment you confirm. Your client gets a payment link; you get paid by card or ACH, and you're told when the money lands. Quotes, clients, and recurring invoices included.
 
-## Quick start
+## Get a key
 
-1. **Get a free key** — Holdings workspace → **Settings → API keys**.
-2. **Add the server** to your MCP client:
+Create a free key in your Holdings workspace → **Settings → API keys**. No monthly fee.
+
+## Connect
+
+Pick whichever fits your client. All three use the same free key.
+
+### 1. Local (npm / stdio) — Claude Desktop, Cursor, Cline, Windsurf
 
 ```json
 {
@@ -21,7 +26,19 @@ Tell the AI you already use who to bill and how much: it drafts the invoice, sho
 }
 ```
 
-3. **Ask your AI:** *"Send Acme the December retainer — $8,400, net 30."*
+### 2. Hosted (remote / Streamable HTTP) — any client that supports remote MCP
+
+```
+https://mcp.getholdings.com/mcp
+```
+
+Authenticate with either an `Authorization: Bearer <your key>` header or a `?mcpKey=<your key>` query parameter. Nothing to install.
+
+### 3. Smithery
+
+One-click via the registry: **[smithery.ai/server/holdings/invoicing](https://smithery.ai/server/holdings/invoicing)** — paste your key when prompted.
+
+Then just ask your AI: *"Send Acme the December retainer — $8,400, net 30."*
 
 ## What you can do
 
@@ -30,11 +47,13 @@ Tell the AI you already use who to bill and how much: it drafts the invoice, sho
 - **Clients** — keep the people and businesses you bill.
 - **Payments** — see what's paid and what's outstanding.
 
-Every action is confirmable: `create_*` makes a draft, and nothing reaches a client until an explicit send. Amounts are recomputed server-side. You stay in control.
+Every action is confirmable: a draft is created first, and nothing reaches a client until an explicit send. Amounts are recomputed server-side. You stay in control.
 
 ## Links
+
 - Learn more: https://getholdings.com/invoicing
 - npm: https://www.npmjs.com/package/@getholdings/mcp
+- Registry: https://registry.modelcontextprotocol.io (`com.getholdings/mcp`)
 - Privacy: https://getholdings.com/privacy · Terms: https://getholdings.com/terms
 
 _Built by Holdings Financial Technologies. Payments via Stripe._
