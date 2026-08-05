@@ -1,5 +1,7 @@
 # Holdings — MCP server
 
+[![smithery badge](https://smithery.ai/badge/holdings/invoicing)](https://smithery.ai/servers/holdings/invoicing)
+
 **Software your AI can run.** Let Claude, ChatGPT, or Cursor send invoices and take payment — card or ACH. You approve every send. No monthly fee.
 
 Tell the AI you already use who to bill and how much: it drafts the invoice, shows you a preview, and sends it the moment you confirm. Your client gets a payment link; you get paid by card or ACH, and you're told when the money lands. Quotes, clients, and recurring invoices included.
@@ -36,7 +38,7 @@ Authenticate with either an `Authorization: Bearer <your key>` header or a `?mcp
 
 ### 3. Smithery
 
-One-click via the registry: **[smithery.ai/server/holdings/invoicing](https://smithery.ai/server/holdings/invoicing)** — paste your key when prompted.
+One-click via the registry: **[smithery.ai/servers/holdings/invoicing](https://smithery.ai/servers/holdings/invoicing)** — paste your key when prompted.
 
 Then just ask your AI: *"Send Acme the December retainer — $8,400, net 30."*
 
